@@ -11,7 +11,6 @@ let pendingDevs = [
 ];
 
 let devSpeaking = {};
-
 let pendingList = document.querySelector('[pending-list]');
 
 let removeChild = function (dev) {
@@ -48,6 +47,5 @@ function displayPedingsDevs() {
     pendingList.appendChild(devDiv);
   });
 }
-
 
 displayPedingsDevs();
