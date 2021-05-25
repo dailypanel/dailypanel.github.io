@@ -1,0 +1,35 @@
+.dev-speaking {
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
+  line-height: 200px;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
+.pending-list {
+  background-color: #0d6efd;
+  border: 2px solid #052c65;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.retired-list {
+  background-color: #dc3545;
+  border: 2px solid #58151c;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.dev-list {
+  margin: 0 auto;
+}
+
+.retired-list .dev,
+.pending-list .dev {
+  height: 100px;
+  width: 100px;
+  border: 2px solid #FFFFFF;
+  margin: 0 auto 20px auto;
+  line-height: 100px;
+}
