@@ -18,7 +18,7 @@ let removeChild = function (dev) {
     let retiredList = document.querySelector('[retired-list]');
     let retiredDiv = document.createElement('div');
     let attri = document.createAttribute('class');
-    attri.value = 'col-md-3 dev rounded-circle text-center';
+    attri.value = 'col-md-3 dev text-center';
     retiredDiv.setAttributeNode(attri);
     retiredDiv.innerText = devSpeaking.display;
     retiredList.appendChild(retiredDiv);
@@ -32,10 +32,10 @@ let removeChild = function (dev) {
 
 function displayPedingsDevs() {
   pendingDevs.forEach( d => {
-    let devDiv = document.createElement('div');``
+    let devDiv = document.createElement('div');
     let attr = document.createAttribute('class');
 
-    attr.value = 'col-md-3 dev rounded-circle text-center';
+    attr.value = 'col-md-3 dev text-center';
 
     devDiv.innerText = d.display;
     devDiv.setAttributeNode(attr);

@@ -1,35 +1,45 @@
 .dev-speaking {
-  height: 200px;
   width: 200px;
-  border: 2px solid black;
-  line-height: 200px;
+  height: 100px;
+  line-height: 100px;
   font-size: 2rem;
   margin: 0 auto;
-}
-
-.pending-list {
-  background-color: #0d6efd;
-  border: 2px solid #052c65;
-  color: #FFFFFF;
+  background-color: #33cc33;
+  color: #FFF;
   border-radius: 5px;
 }
 
+.pending-list {
+  border: 2px solid #99ccff;
+  border-radius: 5px;
+  background-color: #99ccff;
+  color: #FFF;
+}
+
+
 .retired-list {
-  background-color: #dc3545;
-  border: 2px solid #58151c;
-  color: #FFFFFF;
+  background-color: #ff9999;
+  color: #FFF;
   border-radius: 5px;
 }
 
 .dev-list {
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .retired-list .dev,
 .pending-list .dev {
-  height: 100px;
   width: 100px;
-  border: 2px solid #FFFFFF;
+  border-radius: 5px;
   margin: 0 auto 20px auto;
-  line-height: 100px;
+  line-height: 50px;
+}
+
+.pending-list .dev {
+  background-color: #0099ff;
+}
+
+.retired-list .dev {
+  background-color: #ff5050;
 }
