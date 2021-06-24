@@ -12,6 +12,7 @@ let pendingDevs = [
 
 let devSpeaking = {};
 let pendingList = document.querySelector('[pending-list]');
+let divDevSpeaking = document.querySelector('[dev-speaking]');
 
 let removeChild = function (dev) {
   if(!!devSpeaking.display) {
@@ -26,8 +27,7 @@ let removeChild = function (dev) {
   }
 
   devSpeaking = dev;
-  let divDev = document.querySelector('[dev-speaking]');
-  divDev.innerHTML = devSpeaking.name;
+  divDevSpeaking.innerHTML = devSpeaking.name;
 }
 
 function displayPedingsDevs() {

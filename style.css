@@ -18,6 +18,7 @@
 
 
 .retired-list {
+  border: 2px solid #ff9999;
   background-color: #ff9999;
   color: #FFF;
   border-radius: 5px;
