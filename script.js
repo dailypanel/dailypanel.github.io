@@ -5,8 +5,7 @@ let pendingDevs = [
   { name: 'Joel', display: 'Joel' },
   { name: 'Matheus', display: 'Matheus' },
   { name: 'Filipe', display: 'Filipe' },
-  { name: 'Watanabe', display: 'Watanabe' },
-  { name: 'Denis', display: 'Denis' }
+  { name: 'Watanabe', display: 'Watanabe' }
 ];
 
 let devSpeaking = {};
