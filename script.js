@@ -25,7 +25,7 @@ let removeChild = function (dev) {
   }
 
   devSpeaking = dev;
-  divDevSpeaking.innerHTML = devSpeaking.name;
+  divDevSpeaking.innerHTML = devSpeaking.display;
 }
 
 function displayPedingsDevs() {
