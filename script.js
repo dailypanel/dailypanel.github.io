@@ -3,7 +3,7 @@ let pendingDevs = [
   { name: 'Biguzzi', display: 'Biguzzi' },
   { name: 'Joel', display: 'Joel' },
   { name: 'Filipe', display: 'Filipe' },
-  { name: 'Erivelto', display: 'Eri' },
+  { name: 'Erivelto', display: 'Erivelto' },
 //   { name: 'Watanabe', display: 'Watanabe' }
 ];
 
