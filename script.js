@@ -1,5 +1,4 @@
 let pendingDevs = [
-  { name: 'Bruno', display: 'Bruno' },
   { name: 'Biguzzi', display: 'Biguzzi' },
   { name: 'Joel', display: 'Joel' },
   { name: 'Filipe', display: 'Filipe' },
