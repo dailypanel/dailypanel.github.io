@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  transition: background-color linear 0.5s, color linear 0.5s;
+  font-family: 'Poppins', 'Arial', sans-serif;
+}
+
+:root {
+  --background: #FFF;
+  --font-color: #000;
+  --primary-color1: #D7DDE0;
+  --navbar-height: max(75px, 7vh);
+  --header-height: max(100px, 10vh);
+  font-size: 62.5%;
+}
+
+:root .dark-theme, :root .dark-theme * {
+  --background: #181A1B;
+  --font-color: #FFF;
+  --primary-color1: #1F2122;
+  --primary-color2: #5A2D82;
+}
+
+:root .netshoes-theme, :root .netshoes-theme * {
+  --background: #181A1B;
+  --font-color: #FFF;
+  --primary-color1: #5A2D82;
+}
+
+body {
+  background-color: var(--background);
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  grid-template: 
+    "header" var(--header-height)
+    "panel" calc(100vh - var(--header-height) - var(--navbar-height) - 4em)
+    "footer" var(--navbar-height)
+    ;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 1em;
+  gap: 1em;
+}
+
+.main-header {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: var(--font-color);
+  background-color: var(--primary-color1);
+  border-radius: 20px;
+}
+
+.main-header > .title {
+  display: flex;
+  place-items: center;
+  font-size: 1.75em;
+  margin: 0 1em;
+}
+
+.main-header > .netshoes-logo {
+  display: table;
+  width: 100px;
+  height: auto;
+  color: #370f53;
+  margin: 0 1em;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0;
+  text-decoration: none;
+  background-image: url("https://static.netshoes.com.br/2.24.1/netshoesbr/images/logo.png");
+}
+
+.participants-panel {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color1);
+  border-radius: 20px;
+}
+
+nav.navbar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;;
+  color: var(--background);
+  background-color: var(--font-color);
+  border-radius: 10px;
+  padding: 0 4em;
+}
+
+nav.navbar ul {
+  display: flex;
+}
+
+nav.navbar ul li {
+  position: relative;
+  list-style: none;
+  width: 7em;
+  height: 7em;
+  z-index: 1;
+}
+
+nav.navbar ul > li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--background);
+  font-weight: 500;
+  z-index: 2;
+}
+
+nav.navbar a > .icon {
+  position: relative;
+  display: block;
+  font-size: 2.5em;
+  color: var(--background);
+  line-height: var(--navbar-height);
+  text-align: center;
+}
+
+nav.navbar li a > .icon > ion-icon {
+  font-size: 1.2em;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+nav.navbar li:hover a > .icon > ion-icon {
+  color: var(--font-color);
+  background-color: var(--primary-color2);
+  transform: translateY(-25px);
+}
+
+nav.navbar li a > .text {
+  position: absolute;
+  width: 100%;
+  font-size: 1.2em;
+  min-width: 10rem;
+  text-align: center;
+  margin-top: 0.5em;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+nav.navbar li:hover a > .text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.indicator {
+  position: absolute;
+}
