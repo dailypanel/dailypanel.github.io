@@ -39,8 +39,7 @@ body {
   grid-template: 
     "header" var(--header-height)
     "panel" calc(100vh - var(--header-height) - var(--navbar-height) - 4em)
-    "footer" var(--navbar-height)
-    ;
+    "footer" var(--navbar-height) ;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -49,13 +48,105 @@ body {
   gap: 1em;
 }
 
-.main-header {
+.panel {
   display: flex;
   width: 100%;
   height: 100%;
-  color: var(--font-color);
   background-color: var(--primary-color1);
+  color: var(--font-color);
   border-radius: 20px;
+}
+
+.participants-panel {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 1em;
+}
+
+.participants-panel > .panel {
+  display: flex;
+  position: relative;
+  padding: 2em;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.participants-panel > .panel.to-speak {
+  place-items: start;
+  flex-direction: row-reverse;
+}
+
+.participants-panel > .panel.to-speak .title {
+  top: auto;
+  bottom: 1em;
+}
+
+.participants-panel > .panel.spoken {
+  flex-direction: row-reverse;
+  place-items: end;
+  flex-wrap: wrap-reverse;
+}
+
+.participants-panel > .panel > .title {
+  position: absolute;
+  top: 1em;
+  left: 2em;
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.participant {
+  position: relative;
+  display: flex;
+  font-size: 1.4em;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  place-items: center;
+  gap: 0.5em;
+}
+
+.participant > .participant-name {
+  display: flex;
+  color: var(--background);
+  font-size: 0.8em;
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  background-color: var(--font-color);
+}
+
+.participant img {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  border: 0.1rem solid var(--font-color);
+}
+
+.speaking {
+  position: absolute;
+  display: flex;
+  top: calc(50% - 12em);
+  left: calc(50% - 7em);
+  width: auto;
+  height: auto;
+  background-color: var(--primary-color1);
+  color: var(--font-color);
+  border-radius: 20px;
+  z-index: 2;
+  padding: 2em;
+}
+
+.speaking > .participant {
+  width: 10em;
+}
+
+.speaking > .participant > img {
+  width: 10em;
+  height: 10em;
 }
 
 .main-header > .title {
@@ -76,13 +167,6 @@ body {
   background-position: 0;
   text-decoration: none;
   background-image: url("https://static.netshoes.com.br/2.24.1/netshoesbr/images/logo.png");
-}
-
-.participants-panel {
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary-color1);
-  border-radius: 20px;
 }
 
 nav.navbar {
