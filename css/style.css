@@ -20,8 +20,10 @@
 :root .dark-theme, :root .dark-theme * {
   --background: #181A1B;
   --font-color: #FFF;
+  --font-color2: #1F2122;
   --primary-color1: #1F2122;
   --primary-color2: #5A2D82;
+  --accent-color1: #FFF; 
 }
 
 :root .netshoes-theme, :root .netshoes-theme * {
@@ -99,10 +101,11 @@ body {
 
 .participant-list {
   display: flex;
-  overflow: auto;
+  overflow-x: auto;
   max-width: calc(min(100vw, 900px) - 6em);
+  height: calc((min(15vh, 8em) + 3em) * 1.5);
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   place-items: center;
   flex: 1;
   gap: 3em;
@@ -131,12 +134,14 @@ body {
   height: auto;
   flex-direction: column;
   place-items: center;
+  text-decoration: none;
   gap: 1em;
+  transition: 0.4s;
 }
 
 .participant > .participant-name {
   display: inline;
-  color: var(--background);
+  color: var(--font-color2);
   font-size: 1.2rem;
   padding: 0 1rem;
   max-width: min(15vh, 8em);
@@ -144,7 +149,7 @@ body {
   line-height: 1.5em;
   border-radius: 1em;
   word-break: break-all;
-  background-color: var(--font-color);
+  background-color: var(--accent-color1);
   overflow: hidden;
 }
 
@@ -152,7 +157,15 @@ body {
   width: min(15vh, 8em);
   height: min(15vh, 8em);
   border-radius: 50%;
-  border: 0.1rem solid var(--font-color);
+  transition: 0.4s;
+}
+
+.participant:hover {
+  transform: scale(1.2);
+}
+
+.participant:hover img {
+  box-shadow: 0 0 1rem var(--glow);
 }
 
 .speaking {
@@ -163,7 +176,7 @@ body {
   transform: translate(-50%, -50%);
   width: auto;
   height: auto;
-  background-color: var(--primary-color1);
+  background-color: var(--background);
   color: var(--font-color);
   border-radius: 20px;
   z-index: 2;
@@ -203,7 +216,7 @@ body {
   border-radius: 50%;
   background-color: var(--font-color);
   color: var(--background);
-  padding: 1rem;
+  padding: 0.7rem;
   transition: 0.4s;
 }
 
@@ -218,8 +231,8 @@ nav.navbar {
   width: 100%;
   justify-content: center;
   align-items: center;;
-  color: var(--background);
-  background-color: var(--font-color);
+  color: var(--font-color2);
+  background-color: var(--accent-color1);
   border-radius: 10px;
   padding: 0 4em;
 }
@@ -245,7 +258,7 @@ nav.navbar ul > li a {
   align-items: center;
   text-align: center;
   text-decoration: none;
-  color: var(--background);
+  color: var(--font-color2);
   font-weight: 500;
   z-index: 2;
 }
@@ -254,7 +267,7 @@ nav.navbar a > .icon {
   position: relative;
   display: block;
   font-size: 2.5em;
-  color: var(--background);
+  color: var(--font-color2);
   line-height: var(--navbar-height);
   text-align: center;
 }
@@ -296,5 +309,5 @@ nav.navbar li:hover a > .text {
 
 @keyframes glowing {
   from { box-shadow: none; }
-  to { box-shadow: 0 0 2.5rem var(--glow); }
+  to { box-shadow: 0 0 1.5rem var(--glow); }
 }
