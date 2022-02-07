@@ -13,6 +13,7 @@
   --primary-color1: #D7DDE0;
   --navbar-height: max(75px, 7vh);
   --header-height: max(100px, 10vh);
+  --glow: #1EB4FF;
   font-size: 62.5%;
 }
 
@@ -111,11 +112,6 @@ body {
   padding-bottom: 10em;
 }
 
-.participants-panel > .panel.to-speak .title {
-  top: auto;
-  bottom: 1em;
-}
-
 .participants-panel > .panel.spoken {
   padding-top: 10em;
 }
@@ -181,6 +177,39 @@ body {
 .speaking > .participant > img {
   width: 10em;
   height: 10em;
+  animation: glowing 1s linear infinite alternate;
+}
+
+.middle-navbar {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: calc(50% + 15rem);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.middle-navbar .button {
+  position: relative;
+  display: flex;
+  place-items: center;
+}
+
+.middle-navbar .button > ion-icon {
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-color: var(--font-color);
+  color: var(--background);
+  padding: 1rem;
+  transition: 0.4s;
+}
+
+.middle-navbar .button:hover > ion-icon {
+  transform: scale(1.2);
+  box-shadow: 0 0 0.5rem var(--glow);
 }
 
 nav.navbar {
@@ -235,7 +264,7 @@ nav.navbar li a > .icon > ion-icon {
   padding: 1rem;
   margin-top: 1rem;
   border-radius: 50%;
-  transition: 0.5s;
+  transition: all 0.5s;
 }
 
 nav.navbar li:hover a > .icon > ion-icon {
@@ -263,4 +292,9 @@ nav.navbar li:hover a > .text {
 
 .indicator {
   position: absolute;
+}
+
+@keyframes glowing {
+  from { box-shadow: none; }
+  to { box-shadow: 0 0 2.5rem var(--glow); }
 }
