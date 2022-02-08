@@ -14,11 +14,10 @@
 
 <body class="dark-theme">
   <div class="container">
-    <!-- TODO Problemas para monitores muito baixos... Futuro media-query?  -->
-    <!-- <header class="panel main-header">
+    <header class="panel main-header">
       <h1 class="netshoes-logo"></h1>
       <h1 class="title">Marketplace Pré-vendas Daily</h1>
-    </header> -->
+    </header>
 
     <section class="participants-panel">
       <div class="panel to-speak">
@@ -48,20 +47,34 @@
             <img src="https://ca.slack-edge.com/T024FR42U-U01F6UXKTHP-88ebd0528ece-512" alt="Watnabe"/>
             <span class="participant-name">Fernando</span>
           </div>
+          <div onclick="js:this.classList.add('popout')" class="participant">
+            <img src="https://ca.slack-edge.com/T024FR42U-U01F6UXKTHP-88ebd0528ece-512" alt="Watnabe"/>
+            <span class="participant-name">Fernando</span>
+          </div>
+          <div onclick="js:this.classList.add('popout')" class="participant">
+            <img src="https://ca.slack-edge.com/T024FR42U-U01F6UXKTHP-88ebd0528ece-512" alt="Watnabe"/>
+            <span class="participant-name">Fernando</span>
+          </div>
+          <div onclick="js:this.classList.add('popout')" class="participant">
+            <img src="https://ca.slack-edge.com/T024FR42U-U01F6UXKTHP-88ebd0528ece-512" alt="Watnabe"/>
+            <span class="participant-name">Fernando</span>
+          </div>
         </div>
       </div>
 
-      <div class="speaking">
-        <div class="participant">
-          <img src="https://ca.slack-edge.com/T024FR42U-U01F6UXKTHP-88ebd0528ece-512" alt="Watnabe"/>
-          <span class="participant-name">Fernando</span>
-        </div>
-      </div>
+      <div class="middle-content">
+          <div class="speaking">
+            <div class="participant">
+              <img src="https://ca.slack-edge.com/T024FR42U-U01F6UXKTHP-88ebd0528ece-512" alt="Watnabe"/>
+              <span class="participant-name">Fernando</span>
+            </div>
+          </div>
 
-      <div class="middle-navbar">
-        <a href="#" class="button">
-          <ion-icon name="dice-outline"></ion-icon>
-        </a>
+          <div class="middle-navbar">
+            <a href="#" class="button" tooltip="Alaeatório">
+              <ion-icon name="dice-outline"></ion-icon>
+            </a>
+          </div>
       </div>
 
       <div class="panel spoken">
@@ -95,8 +108,7 @@
       </div>
     </section>
 
-    <!-- TODO Problemas para monitores muito baixos... Futuro media-query?  -->
-    <!-- <nav class="navbar">
+    <nav class="navbar">
       <ul>
         <li>
           <a href="#">
@@ -114,7 +126,7 @@
             <span class="text">Pós-Daily</span>
           </a>
         </li>
-      </ul> -->
+      </ul>
     </nav>
   </div>
 

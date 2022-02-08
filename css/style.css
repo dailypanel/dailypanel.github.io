@@ -11,8 +11,6 @@
   --background: #FFF;
   --font-color: #000;
   --primary-color1: #D7DDE0;
-  --navbar-height: max(75px, 7vh);
-  --header-height: max(100px, 10vh);
   --glow: #1EB4FF;
   font-size: 62.5%;
 }
@@ -37,14 +35,14 @@ body {
 }
 
 .container {
+  --navbar-height: max(75px, 7vh);
+  --header-height: max(100px, 10vh);
   position: relative;
   display: grid;
-  /* TODO Problemas para monitores muito baixos... Futuro media-query? */
-  /* grid-template: 
+  grid-template: 
     "header" var(--header-height)
-    "panel" calc(100vh - var(--header-height) - var(--navbar-height) - 4em)
-    "footer" var(--navbar-height) ; */ 
-  grid-template: "panel" calc(100vh - 2em);
+    "panel" calc(100vh - var(--header-height) - var(--navbar-height) - 5rem)
+    "footer" var(--navbar-height);
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -73,7 +71,7 @@ body {
   display: table;
   width: 100px;
   height: auto;
-  color: #370f53;
+  color: #370F53;
   margin: 0 1em;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -82,13 +80,28 @@ body {
   background-image: url("https://static.netshoes.com.br/2.24.1/netshoesbr/images/logo.png");
 }
 
+@media (max-height: 800px)
+{
+    .container {
+      grid-template: "panel" calc(100vh - 2em);
+    }
+
+    .main-header {
+      display: none;
+    }
+
+    div.container > nav.navbar {
+      display: none;
+    }
+} 
+
 .participants-panel {
   display: flex;
   position: relative;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 1em;
+  gap: 0.5em;
 }
 
 .participants-panel > .panel {
@@ -99,17 +112,25 @@ body {
   padding: 2em;
 }
 
+.participants-panel > .middle-content {
+  position: relative;
+  height: 0;
+  width: 100%;
+}
+
 .participant-list {
-  display: flex;
-  overflow-x: auto;
+  --participant-size: min(15vh, 8em);
+  display: grid;
+  padding: 2rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 15%;
+  overscroll-behavior-inline: contain;
   max-width: calc(min(100vw, 900px) - 6em);
-  height: calc((min(15vh, 8em) + 5em) * 1.5);
-  flex-wrap: nowrap;
+  height: calc((var(--participant-size) + 3em) * 1.5);
   justify-content: space-between;
   place-items: center;
-  flex: 1;
   gap: 3em;
-  padding: 4rem 3rem;
+  overflow-x: auto;
 }
 
 .participants-panel > .panel.to-speak {
@@ -155,8 +176,8 @@ body {
 }
 
 .participant img {
-  width: min(15vh, 8em);
-  height: min(15vh, 8em);
+  width: var(--participant-size);
+  height: var(--participant-size);
   border-radius: 50%;
   transition: 0.4s;
 }
@@ -174,7 +195,7 @@ body {
 }
 
 .participant.popout {
-    animation: 1s popout ease-in;
+    animation: 0.7s popout ease-in;
 }
 
 .participant-list .participant:hover img {
@@ -231,11 +252,28 @@ body {
   color: var(--background);
   padding: 0.7rem;
   transition: 0.4s;
+  pointer-events: none;
 }
 
 .middle-navbar .button:hover > ion-icon {
   transform: scale(1.2);
   box-shadow: 0 0 0.5rem var(--glow);
+}
+
+*[tooltip]:hover:before {
+    content: attr(tooltip);
+    position: absolute;
+    top: calc(100% + 1em);
+    max-width: 30ch;
+    color: var(--font-color2);
+    background-color: var(--accent-color1);
+    border-radius: 1em;
+    padding: 0 1em;
+    text-align: center;
+    visibility: hidden;
+    visibility: visible;
+    opacity: 1;
+    animation: fade-in 1s ease-out;
 }
 
 nav.navbar {
@@ -318,6 +356,11 @@ nav.navbar li:hover a > .text {
 
 .indicator {
   position: absolute;
+}
+
+@keyframes fade-in {
+  from { visibility: hidden; opacity: 0; }
+  to { visibility: visible; opacity: 1; }
 }
 
 @keyframes glowing {
