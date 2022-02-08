@@ -103,12 +103,13 @@ body {
   display: flex;
   overflow-x: auto;
   max-width: calc(min(100vw, 900px) - 6em);
-  height: calc((min(15vh, 8em) + 3em) * 1.5);
+  height: calc((min(15vh, 8em) + 5em) * 1.5);
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   place-items: center;
   flex: 1;
   gap: 3em;
+  padding: 4rem 3rem;
 }
 
 .participants-panel > .panel.to-speak {
@@ -160,11 +161,23 @@ body {
   transition: 0.4s;
 }
 
-.participant:hover {
+.participant-list .participant {
+    cursor: pointer;
+}
+
+.participant-list .participant:hover {
   transform: scale(1.2);
 }
 
-.participant:hover img {
+.participant.popin {
+    animation: 1s popin ease-out;
+}
+
+.participant.popout {
+    animation: 1s popout ease-in;
+}
+
+.participant-list .participant:hover img {
   box-shadow: 0 0 1rem var(--glow);
 }
 
@@ -190,7 +203,7 @@ body {
 .speaking > .participant > img {
   width: 10em;
   height: 10em;
-  animation: glowing 1s linear infinite alternate;
+  animation: glowing 0.75s linear infinite alternate;
 }
 
 .middle-navbar {
@@ -310,4 +323,15 @@ nav.navbar li:hover a > .text {
 @keyframes glowing {
   from { box-shadow: none; }
   to { box-shadow: 0 0 1.5rem var(--glow); }
+}
+
+@keyframes popout {
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes popin {
+  0% { transform: scale(0.1); opacity: 0; }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); opacity: 1; }
 }
