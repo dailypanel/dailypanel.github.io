@@ -125,6 +125,7 @@ body {
   grid-auto-flow: column;
   grid-auto-columns: 15%;
   overscroll-behavior-inline: contain;
+  width: 100%;
   max-width: calc(min(100vw, 900px) - 6em);
   height: calc((var(--participant-size) + 3em) * 1.5);
   justify-content: space-between;
