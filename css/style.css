@@ -61,14 +61,14 @@ body {
   border-radius: 20px;
 }
 
-.main-header > .title {
+.main-header .title {
   display: flex;
   place-items: center;
   font-size: 1.75rem;
   margin: 0 1em;
 }
 
-.main-header > .netshoes-logo {
+.main-header .netshoes-logo {
   display: table;
   width: 100px;
   height: auto;
@@ -106,7 +106,7 @@ body {
   gap: 0.5rem;
 }
 
-.participants-panel > .panel {
+.participants-panel .panel {
   display: flex;
   position: relative;
   place-items: center;
@@ -114,7 +114,7 @@ body {
   padding: 2rem;
 }
 
-.participants-panel > .middle-content {
+.participants-panel .middle-content {
   position: relative;
   height: 0;
   width: 100%;
@@ -134,15 +134,15 @@ body {
   overflow-x: auto;
 }
 
-.participants-panel > .panel.to-speak {
+.participants-panel .panel.to-speak {
   padding-bottom: 10rem;
 }
 
-.participants-panel > .panel.spoken {
+.participants-panel .panel.spoken {
   padding-top: 10rem;
 }
 
-.participants-panel > .panel > .title {
+.participants-panel .panel .title {
   position: absolute;
   top: 1em;
   left: 2rem;
@@ -233,7 +233,7 @@ body {
   transition: 0.4s;
 }
 
-.speaking > .participant > img {
+.speaking .participant img {
   width: 10rem;
   height: 10rem;
   animation: glowing 0.75s linear infinite alternate;
@@ -254,7 +254,7 @@ body {
   place-items: center;
 }
 
-.middle-navbar .button > ion-icon {
+.middle-navbar .button ion-icon {
   display: flex;
   height: 3rem;
   width: 3rem;
@@ -267,7 +267,7 @@ body {
   pointer-events: none;
 }
 
-.middle-navbar .button:hover > ion-icon {
+.middle-navbar .button:hover ion-icon {
   transform: scale(1.2);
   box-shadow: 0 0 0.5rem var(--glow);
 }
@@ -276,13 +276,13 @@ body {
     content: attr(tooltip);
     position: absolute;
     top: calc(100% + 1em);
+    transform: translateX(-15%);
     max-width: 30ch;
     color: var(--font-color2);
     background-color: var(--accent-color1);
     border-radius: 1em;
     padding: 0 1em;
     text-align: center;
-    visibility: hidden;
     visibility: visible;
     opacity: 1;
     animation: fade-in 1s ease-out;
@@ -312,7 +312,7 @@ nav.navbar ul li {
   z-index: 1;
 }
 
-nav.navbar ul > li a {
+nav.navbar li a {
   position: relative;
   display: flex;
   width: 100%;
@@ -326,7 +326,7 @@ nav.navbar ul > li a {
   z-index: 2;
 }
 
-nav.navbar a > .icon {
+nav.navbar a .icon {
   position: relative;
   display: block;
   font-size: 2.5rem;
@@ -335,7 +335,7 @@ nav.navbar a > .icon {
   text-align: center;
 }
 
-nav.navbar li a > .icon > ion-icon {
+nav.navbar li a .icon ion-icon {
   font-size: 3rem;
   padding: 1rem;
   margin-top: 1rem;
@@ -343,13 +343,13 @@ nav.navbar li a > .icon > ion-icon {
   transition: all 0.5s;
 }
 
-nav.navbar li:hover a > .icon > ion-icon {
+nav.navbar li:hover a .icon ion-icon {
   color: var(--font-color);
   background-color: var(--primary-color2);
   transform: translateY(-25px);
 }
 
-nav.navbar li a > .text {
+nav.navbar li a .text {
   position: absolute;
   width: 100%;
   font-size: 1.2rem;
@@ -361,7 +361,7 @@ nav.navbar li a > .text {
   transition: all 0.5s;
 }
 
-nav.navbar li:hover a > .text {
+nav.navbar li:hover a .text {
   visibility: visible;
   opacity: 1;
 }
