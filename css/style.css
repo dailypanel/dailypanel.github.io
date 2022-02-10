@@ -22,6 +22,7 @@
   --primary-color1: #1F2122;
   --primary-color2: #5A2D82;
   --accent-color1: #FFF; 
+  --default-image-color: #7F898E;
 }
 
 :root .netshoes-theme, :root .netshoes-theme * {
@@ -96,6 +97,7 @@ body {
 } 
 
 .participants-panel {
+  --participant-size: min(15vh, 8rem);
   display: flex;
   position: relative;
   flex-direction: column;
@@ -119,7 +121,6 @@ body {
 }
 
 .participant-list {
-  --participant-size: min(15vh, 8em);
   display: grid;
   padding: 2rem;
   grid-auto-flow: column;
@@ -162,7 +163,7 @@ body {
   transition: 0.4s;
 }
 
-.participant > .participant-name {
+.participant .participant-name {
   display: inline;
   color: var(--font-color2);
   font-size: 1.2rem;
@@ -181,6 +182,18 @@ body {
   height: var(--participant-size);
   border-radius: 50%;
   transition: 0.4s;
+}
+
+.participant .default-picture {
+   display: flex;
+   font-size: 3em;
+   place-items: center;
+   justify-content: center;
+   text-align: center;
+   width: var(--participant-size);
+   height: var(--participant-size);
+   border-radius: 50%;
+   background-color: var(--default-image-color);
 }
 
 .participant-list .participant {
@@ -209,22 +222,21 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: auto;
-  height: auto;
+  place-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 18rem;
+  padding: 2rem;
   background-color: var(--background);
   color: var(--font-color);
   border-radius: 20px;
   z-index: 2;
-  padding: 2em;
-}
-
-.speaking > .participant {
-  width: 10em;
+  transition: 0.4s;
 }
 
 .speaking > .participant > img {
-  width: 10em;
-  height: 10em;
+  width: 10rem;
+  height: 10rem;
   animation: glowing 0.75s linear infinite alternate;
 }
 
