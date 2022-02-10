@@ -48,8 +48,8 @@ body {
   height: 100%;
   margin: 0 auto;
   max-width: 900px;
-  padding: 1em;
-  gap: 1em;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 .panel {
@@ -64,7 +64,7 @@ body {
 .main-header > .title {
   display: flex;
   place-items: center;
-  font-size: 1.75em;
+  font-size: 1.75rem;
   margin: 0 1em;
 }
 
@@ -103,7 +103,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 0.5em;
+  gap: 0.5rem;
 }
 
 .participants-panel > .panel {
@@ -111,7 +111,7 @@ body {
   position: relative;
   place-items: center;
   flex: 1;
-  padding: 2em;
+  padding: 2rem;
 }
 
 .participants-panel > .middle-content {
@@ -131,23 +131,22 @@ body {
   height: calc((var(--participant-size) + 3em) * 1.5);
   justify-content: space-between;
   place-items: center;
-  gap: 3em;
   overflow-x: auto;
 }
 
 .participants-panel > .panel.to-speak {
-  padding-bottom: 10em;
+  padding-bottom: 10rem;
 }
 
 .participants-panel > .panel.spoken {
-  padding-top: 10em;
+  padding-top: 10rem;
 }
 
 .participants-panel > .panel > .title {
   position: absolute;
   top: 1em;
-  left: 2em;
-  font-size: 1.4em;
+  left: 2rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
@@ -186,7 +185,7 @@ body {
 
 .participant .default-picture {
    display: flex;
-   font-size: 3em;
+   font-size: 3rem;
    place-items: center;
    justify-content: center;
    text-align: center;
@@ -298,7 +297,7 @@ nav.navbar {
   color: var(--font-color2);
   background-color: var(--accent-color1);
   border-radius: 10px;
-  padding: 0 4em;
+  padding: 0 4rem;
 }
 
 nav.navbar ul {
@@ -308,8 +307,8 @@ nav.navbar ul {
 nav.navbar ul li {
   position: relative;
   list-style: none;
-  width: 7em;
-  height: 7em;
+  width: 7rem;
+  height: 7rem;
   z-index: 1;
 }
 
@@ -330,14 +329,14 @@ nav.navbar ul > li a {
 nav.navbar a > .icon {
   position: relative;
   display: block;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   color: var(--font-color2);
   line-height: var(--navbar-height);
   text-align: center;
 }
 
 nav.navbar li a > .icon > ion-icon {
-  font-size: 1.2em;
+  font-size: 3rem;
   padding: 1rem;
   margin-top: 1rem;
   border-radius: 50%;
@@ -353,10 +352,10 @@ nav.navbar li:hover a > .icon > ion-icon {
 nav.navbar li a > .text {
   position: absolute;
   width: 100%;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   min-width: 10rem;
   text-align: center;
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
