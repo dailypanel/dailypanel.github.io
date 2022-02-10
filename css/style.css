@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  transition: background-color linear 0.5s, color linear 0.5s;
+  font-family: 'Poppins', 'Arial', sans-serif;
+}
+
+:root {
+  --background: #FFF;
+  --font-color: #000;
+  --primary-color1: #D7DDE0;
+  --glow: #1EB4FF;
+  font-size: 62.5%;
+}
+
+:root .dark-theme, :root .dark-theme * {
+  --background: #181A1B;
+  --font-color: #FFF;
+  --font-color2: #1F2122;
+  --primary-color1: #1F2122;
+  --primary-color2: #5A2D82;
+  --accent-color1: #FFF; 
+  --default-image-color: #7F898E;
+}
+
+:root .netshoes-theme, :root .netshoes-theme * {
+  --background: #181A1B;
+  --font-color: #FFF;
+  --primary-color1: #5A2D82;
+}
+
+body {
+  background-color: var(--background);
+}
+
+.container {
+  --navbar-height: max(75px, 7vh);
+  --header-height: max(100px, 10vh);
+  position: relative;
+  display: grid;
+  grid-template: 
+    "header" var(--header-height)
+    "panel" calc(100vh - var(--header-height) - var(--navbar-height) - 5rem)
+    "footer" var(--navbar-height);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.panel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color1);
+  color: var(--font-color);
+  border-radius: 20px;
+}
+
+.main-header .title {
+  display: flex;
+  place-items: center;
+  font-size: 1.75rem;
+  margin: 0 1em;
+}
+
+.main-header .netshoes-logo {
+  display: table;
+  width: 100px;
+  height: auto;
+  color: #370F53;
+  margin: 0 1em;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0;
+  text-decoration: none;
+  background-image: url("https://static.netshoes.com.br/2.24.1/netshoesbr/images/logo.png");
+}
+
+@media (max-height: 800px)
+{
+    .container {
+      grid-template: "panel" calc(100vh - 2em);
+    }
+
+    .main-header {
+      display: none;
+    }
+
+    div.container > nav.navbar {
+      display: none;
+    }
+} 
+
+.participants-panel {
+  --participant-size: min(15vh, 8rem);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.participants-panel .panel {
+  display: flex;
+  position: relative;
+  place-items: center;
+  flex: 1;
+  padding: 2rem;
+}
+
+.participants-panel .middle-content {
+  position: relative;
+  height: 0;
+  width: 100%;
+}
+
+.participant-list {
+  display: grid;
+  padding: 2rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 15%;
+  overscroll-behavior-inline: contain;
+  width: 100%;
+  max-width: calc(min(100vw, 900px) - 6em);
+  height: calc((var(--participant-size) + 3em) * 1.5);
+  justify-content: space-between;
+  place-items: center;
+  overflow-x: auto;
+}
+
+.participants-panel .panel.to-speak {
+  padding-bottom: 10rem;
+}
+
+.participants-panel .panel.spoken {
+  padding-top: 10rem;
+}
+
+.participants-panel .panel .title {
+  position: absolute;
+  top: 1em;
+  left: 2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.participant {
+  position: relative;
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  place-items: center;
+  text-decoration: none;
+  gap: 1em;
+  transition: 0.4s;
+}
+
+.participant .participant-name {
+  display: inline;
+  color: var(--font-color2);
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  max-width: min(15vh, 8em);
+  max-height: 1.5em;
+  line-height: 1.5em;
+  border-radius: 1em;
+  word-break: break-all;
+  background-color: var(--accent-color1);
+  overflow: hidden;
+}
+
+.participant img {
+  width: var(--participant-size);
+  height: var(--participant-size);
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.participant .default-picture {
+   display: flex;
+   font-size: 3rem;
+   place-items: center;
+   justify-content: center;
+   text-align: center;
+   width: var(--participant-size);
+   height: var(--participant-size);
+   border-radius: 50%;
+   background-color: var(--default-image-color);
+}
+
+.participant-list .participant {
+    cursor: pointer;
+}
+
+.participant-list .participant:hover {
+  transform: scale(1.2);
+}
+
+.participant.popin {
+    animation: 1s popin ease-out;
+}
+
+.participant.popout {
+    animation: 0.7s popout ease-in;
+}
+
+.participant-list .participant:hover img {
+  box-shadow: 0 0 1rem var(--glow);
+}
+
+.speaking {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  place-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 18rem;
+  padding: 2rem;
+  background-color: var(--background);
+  color: var(--font-color);
+  border-radius: 20px;
+  z-index: 2;
+  transition: 0.4s;
+}
+
+.speaking .participant img {
+  width: 10rem;
+  height: 10rem;
+  animation: glowing 0.75s linear infinite alternate;
+}
+
+.middle-navbar {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: calc(50% + 15rem);
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.middle-navbar .button {
+  position: relative;
+  display: flex;
+  place-items: center;
+}
+
+.middle-navbar .button ion-icon {
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  background-color: var(--font-color);
+  color: var(--background);
+  padding: 0.7rem;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+.middle-navbar .button:hover ion-icon {
+  transform: scale(1.2);
+  box-shadow: 0 0 0.5rem var(--glow);
+}
+
+*[tooltip]:hover:before {
+    content: attr(tooltip);
+    position: absolute;
+    top: calc(100% + 1em);
+    transform: translateX(-15%);
+    max-width: 30ch;
+    color: var(--font-color2);
+    background-color: var(--accent-color1);
+    border-radius: 1em;
+    padding: 0 1em;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    animation: fade-in 1s ease-out;
+}
+
+nav.navbar {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;;
+  color: var(--font-color2);
+  background-color: var(--accent-color1);
+  border-radius: 10px;
+  padding: 0 4rem;
+}
+
+nav.navbar ul {
+  display: flex;
+}
+
+nav.navbar ul li {
+  position: relative;
+  list-style: none;
+  width: 7rem;
+  height: 7rem;
+  z-index: 1;
+}
+
+nav.navbar li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--font-color2);
+  font-weight: 500;
+  z-index: 2;
+}
+
+nav.navbar a .icon {
+  position: relative;
+  display: block;
+  font-size: 2.5rem;
+  color: var(--font-color2);
+  line-height: var(--navbar-height);
+  text-align: center;
+}
+
+nav.navbar li a .icon ion-icon {
+  font-size: 3rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+nav.navbar li:hover a .icon ion-icon {
+  color: var(--font-color);
+  background-color: var(--primary-color2);
+  transform: translateY(-25px);
+}
+
+nav.navbar li a .text {
+  position: absolute;
+  width: 100%;
+  font-size: 1.2rem;
+  min-width: 10rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+nav.navbar li:hover a .text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.indicator {
+  position: absolute;
+}
+
+@keyframes fade-in {
+  from { visibility: hidden; opacity: 0; }
+  to { visibility: visible; opacity: 1; }
+}
+
+@keyframes glowing {
+  from { box-shadow: none; }
+  to { box-shadow: 0 0 1.5rem var(--glow); }
+}
+
+@keyframes popout {
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes popin {
+  0% { transform: scale(0.1); opacity: 0; }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); opacity: 1; }
+}

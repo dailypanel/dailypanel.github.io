@@ -1,0 +1,32 @@
+[
+   {
+      "id": "yukio",
+      "name": "Watanabe",
+      "initials": "FW",
+      "picture": "https://ca.slack-edge.com/T024FR42U-U01F6UXKTHP-88ebd0528ece-512"
+   },
+   {
+      "id": "joel",
+      "name": "Joel",
+      "initials": "JS",
+      "picture": "https://ca.slack-edge.com/T024FR42U-U01176QR3LG-178dbc04f39d-512"
+   },
+   {
+      "id": "eri",
+      "name": "Erivelto",
+      "initials": "EX",
+      "picture": "https://ca.slack-edge.com/T024FR42U-U029E1LAC2G-09502f6cab21-512"
+   },
+   {
+      "id": "biguzzi",
+      "name": "Biguzzi",
+      "initials": "MB",
+      "picture": null
+   },
+   {
+      "id": "paiva",
+      "name": "Filipe",
+      "initials": "FP",
+      "picture": "https://ca.slack-edge.com/T024FR42U-U021GV53GR3-5c4cac5df318-512"
+   }
+]

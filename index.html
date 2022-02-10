@@ -2,53 +2,69 @@
 <html lang="pt-BR">
 
 <head>
+  <meta http-equiv="cache-control" content="no-cache">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384- giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Daily</title>
 </head>
 
-<body>
-  <header class="container">
-    <h1 class="text-center">Daily</h1>
-    <section class="mt-5">
-      <div class="dev-speaking text-center" dev-speaking>
+<body class="dark-theme">
+  <div class="container">
+    <header class="panel main-header">
+      <h1 class="netshoes-logo"></h1>
+      <h1 class="title">Marketplace Pré-vendas Daily</h1>
+    </header>
+
+    <section class="participants-panel">
+      <div class="panel to-speak">
+        <span class="title">Quem falta falar?</span>
+        <div class="participant-list"></div>
+      </div>
+
+      <div class="middle-content">
+          <div class="speaking"></div>
+
+          <div class="middle-navbar">
+            <a href="#" class="button" tooltip="Alaeatório">
+              <ion-icon name="dice-outline"></ion-icon>
+            </a>
+          </div>
+      </div>
+
+      <div class="panel spoken">
+        <span class="title">Quem já falou?</span>
+        <div class="participant-list"></div>
       </div>
     </section>
-  </header>
-  <section class="container mt-5">
-    <div class="row">
 
-      <!-- pending list -->
-      <section class="col-md-5 pending-list p-4">
-        <header>
-         <h3 class="text-center">Quem falta falar?</h3>
-        </header>
-        <article class="mt-5">
-          <div class="row dev-list" pending-list></div>
-        </article>
-      </section>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="alarm-outline"></ion-icon>
+            </span>
+            <span class="text">Daily</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon">
+              <ion-icon name="timer-outline"></ion-icon>
+            </span>
+            <span class="text">Pós-Daily</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
-      <!-- white -->
-      <div class="col-md-2"></div>
-
-      <!-- retired-list -->
-      <section class="col-md-5 retired-list p-4">
-        <header>
-         <h3 class="text-center">Quem já falou?</h3>
-        </header>
-        <article class="mt-5">
-          <section class="row dev-list" retired-list></section>
-        </article>
-      </section>
-    </div>
-  </section>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="./scripts/manage-daily.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
