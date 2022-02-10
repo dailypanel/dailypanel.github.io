@@ -1,4 +1,4 @@
-(function(){
+let daily_manager = (function(){
    let all_participants;
 
    function fetch_participants(url, callback) {
@@ -54,6 +54,8 @@
    }
 
    function change_speaking_participant(new_participant) {
+      new_participant.classList.remove("popin");
+
       let old_participant = document.querySelector(".speaking > .participant");
 
       if (old_participant) {
@@ -101,11 +103,19 @@
       new_participant.classList.add("popout");
    }
 
+   function call_random_participant() {
+      let all_pending_participants = document.querySelectorAll(".to-speak .participant-list .participant");
+
+      if (all_pending_participants.length === 0) return;
+
+      let random_index = Math.floor(Math.random() * all_pending_participants.length);
+
+      change_speaking_participant(all_pending_participants[random_index]);
+   }
+
    fetch_participants("./data/participants.json", render_participants);
 
    return {
-      create_participant,
-      add_to_pending_list,
-      change_speaking_participant
+      call_random_participant
    };
 })();
